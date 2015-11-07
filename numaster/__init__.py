@@ -64,9 +64,13 @@ def _clean(number: str) -> str:
     return number
 
 
-def normalize(text: str) -> str:
+def normalize(number: str, decimal_point=None, separator=None) -> str:
     result = 0
-    number = text.replace(',', '')
+    if separator is not None:
+        number = number.replace(separator, '')
+    if decimal_point is not None:
+        number = number.replace(decimal_point, '.')
+
     for match in segment_re.finditer(number):
         units = []
         numbers = []
