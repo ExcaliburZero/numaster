@@ -2,6 +2,7 @@ import setuptools
 
 
 install_requires = [
+    'mypy-lang',
 ]
 
 
